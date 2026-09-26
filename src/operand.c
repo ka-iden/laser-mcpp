@@ -86,6 +86,7 @@ int8_t istrap (Token *token)
         {"IN", "in"},
         {"PUTSP", "putsp"},
         {"HALT", "halt"},
+        {"PUTN", "putn"},
         {"TRAP", "trap"},
         {"REG", "reg"},
         {"CHAT", "chat"},
@@ -96,9 +97,9 @@ int8_t istrap (Token *token)
         {"GETH", "geth"}
     };
 
-    int8_t tmp = arrcmp (token->str, traps, 14);
+    int8_t tmp = arrcmp (token->str, traps, 15);
     if (tmp == -1) return -1;
-    else if (tmp == 6) return 0;
+    else if (tmp == 7) return 0;
     else return 32 + tmp;
 }
 
